@@ -16,7 +16,7 @@ pipeline {
                 }
             }
         }
-        stage('Test') {
+        stage('Test-verify') {
             steps {
                  retry(1) { // Time out option will make the step wait for x mins to execute if it takes more than that it will fail
                         sh 'ls -lrt'
