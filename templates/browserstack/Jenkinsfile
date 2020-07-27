@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent 'master'
 
     stages {
         stage('Checkout') {
@@ -7,7 +7,17 @@ pipeline {
               git credentialsId: "${github_creds}", url: "${github_repo}"
             }
         }
-        stage('Build') {
+        stage('selenium connection string') {
+            steps {
+                sh 'ls -lrt'
+            }
+        }
+        stage('selenium connection string') {
+            steps {
+                sh 'ls -lrt'
+            }
+        }
+        stage('selenium connection string') {
             steps {
                 sh 'ls -lrt'
             }
