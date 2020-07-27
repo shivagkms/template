@@ -1,5 +1,7 @@
+#!/usr/bin/env groovy
+
 pipeline {
-    agent 'master'
+    agent any
 
     stages {
         stage('Checkout') {
@@ -7,24 +9,21 @@ pipeline {
               git credentialsId: "${github_creds}", url: "${github_repo}"
             }
         }
-        stage('selenium connection string') {
+        stage('Build') {
             steps {
-                sh 'ls -lrt'
+                 timeout(time: 30, unit: 'MINUTES') { // Time out option will make the step wait for x mins to execute if it takes more than that it will fail
+                        sh 'ls -lrt'
+                }
             }
         }
-        stage('selenium connection string') {
-            steps {
-                sh 'ls -lrt'
-            }
-        }
-        stage('selenium connection string') {
-            steps {
-                sh 'ls -lrt'
-            }
-        }
-    }
-      post {
+    
 
+    post {
+
+     always {
+      echo 'always runs regardless of the completion status of the Pipeline run'
+         cleanWs()
+    }
     // Email Ext plugin:
     success {
 
