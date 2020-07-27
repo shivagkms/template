@@ -3,3 +3,6 @@ type: pipeline-template-catalog
 
 name: demo
 displayName: Shared Template Catalog for Teams Working on the Customer Portal
+
+name: browserstack
+displayName: Shared Template Catalog for Browserstack

@@ -1,0 +1,18 @@
+  version: 1
+  type: pipeline-template
+
+  name: BrowserStack Selenium Pipeline Job
+  description: BrowerStack Selenium Pipeline Job
+  parameters:
+    - name: emailRecipient
+      type: string
+      displayName: Email address to be used for sending build notifications
+    - name: github_repo
+      type: string
+      displayName: GitHub HTTPS repo endpoint
+    - name: github_creds
+      displayName: GitHub Credentials ID
+      type: credentials
+      defaultValue: github-creds-example
+    - name: framework
+      type: string
